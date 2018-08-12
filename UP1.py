@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
-import linepy
-from linepy import *
+import LINEPY
+from LINEPY import *
 from akad.ttypes import *
 from multiprocessing import Pool, Process
 from googletrans import Translator
