@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 import youtube_dl
 #import pyimgflip
 
-cl = LineClient(authToken='EvnoQt73aUUOPRwX768e.mDIRQD+WthuKlYOGL7ITRG.cy49J+4X+aWgbm95G0/siCmet43lkOmKmPdnWKcukXU=')
+cl = LineClient(authToken='Ev49wbWDciJuzQi8UG6e.mDIRQD+WthuKlYOGL7ITRG.pAFPZhYHHPSFjqOGUkKn9dqHCER/ZNDUDgOBpLrWJe4=')   #PH-13
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
