@@ -49,10 +49,10 @@ cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
 poll = LinePoll(cl)
 call = LineCall(cl)
-creator = ["u9f478c580a9c4e1de5e407e9b10c2da1"]
-owner = ["u9f478c580a9c4e1de5e407e9b10c2da1"]
-admin = ["u9f478c580a9c4e1de5e407e9b10c2da1","u31d8aba9dff04c75242f2a2097b8adae"]
-staff = ["u9f478c580a9c4e1de5e407e9b10c2da1","u31d8aba9dff04c75242f2a2097b8adae"]
+creator = ["ub0ff92e9820f6b82a2f0b81d6758c2fb"]
+owner = ["ub0ff92e9820f6b82a2f0b81d6758c2fb"]
+admin = ["ub0ff92e9820f6b82a2f0b81d6758c2fb","u31d8aba9dff04c75242f2a2097b8adae"]
+staff = ["ub0ff92e9820f6b82a2f0b81d6758c2fb","u31d8aba9dff04c75242f2a2097b8adae"]
 lineProfile = cl.getProfile()
 mid = cl.getProfile().mid
 #mid = ki.getProfile().mid
@@ -1984,7 +1984,7 @@ def bot(op):
                                 
                         elif cmd == "creator" or text.lower() == 'creator':
                             if msg._from in admin:
-                                cl.sendText(msg.to,"「Created by : Alvian Putra」") 
+                                cl.sendText(msg.to,"「Created by : ᴄᴀʟᴏɴ ᴀʟᴍᴀʀʜᴜᴍ™」") 
                                 ma = ""
                                 for i in creator:
                                     ma = cl.getContact(i)
@@ -2017,7 +2017,7 @@ def bot(op):
                                 zx = ""
                                 zxc = ""
                                 zx2 = []
-                                xpesan =  "☬SELF BOT☬\n[By.☬ധู้さန້ণق↔ധഖาໄฟ☬] \n• User : "
+                                xpesan =  "☬SELF BOT☬\n[By.☬ ᴄᴀʟᴏɴ ᴀʟᴍᴀʀʜᴜᴍ™☬] \n• User : "
                                 ret_ = "• \n• ☬กลุ่มทั้งหมด ➣ : {} Group".format(str(len(grouplist)))
                                 ret_ += "\n• ☬เพื่อน ➣ : {} Friend".format(str(len(contactlist)))
                                 ret_ += "\n• ☬บล็อค ➣ : {} Blocked".format(str(len(blockedlist)))
@@ -2320,7 +2320,7 @@ def bot(op):
                                 ret_ += "\n☬ลิ้งกลุ่ม ➣ : {}".format(gQr)
                                 ret_ += "\n☬Group Ticket ➣: {}".format(gTicket)
                                 ret_ += "\n☬ลิ้้งรูปกลุ่ม ➣ : http://dl.profile.line-cdn.net/{}".format(G.pictureStatus)
-                                ret_ += "\n[By.☬ധู้さန້ণق↔ധഖาໄฟ☬]"
+                                ret_ += "\n[By.☬ ᴄᴀʟᴏɴ ᴀʟᴍᴀʀʜᴜᴍ™☬]"
                                 ret_ += ""
                                 cl.sendMessage(to, str(ret_))
                                 cl.sendImageWithURL(msg.to, 'http://dl.profile.line-cdn.net/'+G.pictureStatus)
@@ -2412,7 +2412,7 @@ def bot(op):
                                     zx = {'S':xlen, 'E':xlen2, 'M':recky.mid}
                                     zx2.append(zx)
                                     zxc += pesan2
-                                    text = xpesan+zxc + "「Next Mapir Lagi」" 
+                                    text = xpesan+zxc + "「Next Mampir Lagi」" 
                                     ki.sendMessage(group, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
                                     ki.sendImageWithURL(group,"http://dl.profile.line-cdn.net/myhome/c/download.nhn?userid=u48c350911cde6604da051d9da06c5db7&oid=faadb1b4f3991376bdccbd5700545da6")
                                     ki.leaveGroup(group)
@@ -3238,37 +3238,37 @@ def bot(op):
                                start = time.time()
                                sendMention(msg.to, sender, "「 Speed Bots」\n• User ", "")
                                elapsed_time = time.time() - start
-                               cl.sendMessage(msg.to, "[By.☬ധู้さန້ণق↔ധഖาໄฟ☬]\nความเร็วสปีด\n{} ต่อวินาที".format(str(elapsed_time)))
+                               cl.sendMessage(msg.to, "[By.☬ ᴄᴀʟᴏɴ ᴀʟᴍᴀʀʜᴜᴍ™☬]\nความเร็วสปีด\n{} ต่อวินาที".format(str(elapsed_time)))
 
                         elif cmd == "spbot":
                             if msg._from in admin:
                                 start = time.time()
-                                sw.sendText("uf0bd4970771f26a8cef66473d59bcc69", '.')
+                                sw.sendText("ub0ff92e9820f6b82a2f0b81d6758c2fb", '.')
                                 elapsed_time = time.time() - start
                                 cl.sendText(msg.to, "%s" % (elapsed_time))
                                 
                                 start2 = time.time()
-                                sw.sendText("uf0bd4970771f26a8cef66473d59bcc69", '.')
+                                sw.sendText("ub0ff92e9820f6b82a2f0b81d6758c2fb", '.')
                                 elapsed_time = time.time() - start2
                                 ki.sendText(msg.to, "%s" % (elapsed_time))
                                 
                                 start3 = time.time()
-                                sw.sendText("uf0bd4970771f26a8cef66473d59bcc69", '.')
+                                sw.sendText("ub0ff92e9820f6b82a2f0b81d6758c2fb", '.')
                                 elapsed_time = time.time() - start3
                                 kk.sendText(msg.to, "%s" % (elapsed_time))
                                 
                                 start4 = time.time()
-                                sw.sendMessage("uf0bd4970771f26a8cef66473d59bcc69", '.')
+                                sw.sendText("ub0ff92e9820f6b82a2f0b81d6758c2fb", '.')
                                 elapsed_time = time.time() - start4
                                 kc.sendText(msg.to, "%s" % (elapsed_time))
                                 
                                 start5 = time.time()
-                                sw.sendText("uf0bd4970771f26a8cef66473d59bcc69", '.')
+                                sw.sendText("ub0ff92e9820f6b82a2f0b81d6758c2fb", '.')
                                 elapsed_time = time.time() - start5
                                 km.sendText(msg.to, "%s" % (elapsed_time)) 
                                 
                                 start6 = time.time()
-                                sw.sendText("uf0bd4970771f26a8cef66473d59bcc69", '.')
+                                sw.sendText("ub0ff92e9820f6b82a2f0b81d6758c2fb", '.')
                                 elapsed_time = time.time() - start6
                                 kb.sendText(msg.to, "%s" % (elapsed_time)) 
                                 
@@ -5005,7 +5005,7 @@ def bot(op):
                                   wait["leave"] = spl
                                   cl.sendMessage(msg.to, "「 Succes 」\nLeave changed to :\n\n{}".format(str(spl)))
 
-                        elif 'ตั้งแทค: ' in msg.text:
+                        elif 'Set respon: ' in msg.text:
                            if msg._from in admin:
                               spl = msg.text.replace('Set respon: ','')
                               if spl in [""," ","\n",None]:
@@ -5044,7 +5044,7 @@ def bot(op):
                             if msg._from in admin:
                                cl.sendMessage(msg.to, "「 Status Leave 」\nLeave Msg mu :\n\n" + str(wait["leave"]))
 
-                        elif text.lower() == "เช็คแทค":
+                        elif text.lower() == "cek respon":
                             if msg._from in admin:
                                cl.sendMessage(msg.to, "「 Status Respon 」\nRespon Msg mu :\n\n" + str(wait["Respontag"]))
 
