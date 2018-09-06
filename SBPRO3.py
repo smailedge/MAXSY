@@ -2258,6 +2258,20 @@ def bot(op):
                             except Exception as e:
                                     cl.sendMessage(msg.to, str(e))
 
+                        elif cmd.startswith("profilesmule: "):
+                          if msg._from in admin:    
+                            try:
+                                separate = msg.text.split(" ")
+                                smule = msg.text.replace(separate[0] + " ","")
+                                links = ("https://smule.com/"+smule)
+                                ss = ("http://api2.ntcorp.us/screenshot/shot?url={}".format(urllib.parse.quote(links)))
+                                cl.sendMessage(msg.to, "Sedang Mencari...")
+                                time.sleep(2)
+                                cl.sendMessage(msg.to, "ID Smule : "+smule+"\nLink : "+links)
+                                cl.sendImageWithURL(msg.to, ss)
+                            except Exception as error:
+                                    cl.sendMessage(msg.to, str(e))
+                                    
                         elif cmd.startswith("cekdate: "):
                           if msg._from in admin:
                             sep = msg.text.split(" ")
