@@ -1257,6 +1257,8 @@ def bot(op):
                                 else: md+="🔰 Notag「ᴏꜰꜰ」\n"
                                 if wait["detectMention"] == True: md+="🔰 Respon「ᴏɴ」\n"
                                 else: md+="🔰 Respon「ᴏꜰꜰ」\n"
+                                if wait["Mentiongift"] == True: md+="🔰 Respongift「ᴏɴ」\n"
+                                else: md+="🔰 Respongift「ᴏꜰꜰ」\n"
                                 if wait["autoJoin"] == True: md+="🔰 Autojoin「ᴏɴ」\n"
                                 else: md+="🔰 Autojoin「ᴏꜰꜰ」\n"
                                 if wait["autoAdd"] == True: md+="🔰 Autoadd「ᴏɴ」\n"
