@@ -301,7 +301,7 @@ def help():
                   "🔰 " + key + "Nk「@」\n" + \
                   "🔰 " + key + "Kick1「@」\n" + \
                   "🔰 " + key + "Mybot\n" + \
-                  "🔰 " + key + "Mytoken\n" + \
+                  "🔰 " + key + "My-token\n" + \
                   "🔰 " + key + "Status\n" + \
                   "🔰 " + key + "About\n" + \
                   "🔰 " + key + "Restart\n" + \
