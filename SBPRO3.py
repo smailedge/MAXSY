@@ -117,6 +117,7 @@ wait = {
     'autoLeave':False,
     'autoLeave1':False,
     "detectMention":False,
+    "Mentiongift": False,
     "Mentionkick":False,
     "welcomeOn":False,
     "sticker":False,
@@ -300,6 +301,7 @@ def help():
                   "🔰 " + key + "Nk「@」\n" + \
                   "🔰 " + key + "Kick1「@」\n" + \
                   "🔰 " + key + "Mybot\n" + \
+                  "🔰 " + key + "Mytoken\n" + \
                   "🔰 " + key + "Status\n" + \
                   "🔰 " + key + "About\n" + \
                   "🔰 " + key + "Restart\n" + \
@@ -340,6 +342,7 @@ def help():
                   "🔰 " + key + "Ytmp3:「Judul Lagu」\n" + \
                   "🔰 " + key + "Ytmp4:「Judul Video」\n" + \
                   "🔰 " + key + "Profileig:「Nama IG」\n" + \
+                  "🔰 " + key + "Profilesmule:「ID smule」\n" + \
                   "🔰 " + key + "Cekdate:「tgl-bln-thn」\n" + \
                   "🔰 " + key + "Jumlah:「angka」\n" + \
                   "🔰 " + key + "Spamtag「@」\n" + \
@@ -355,6 +358,7 @@ def help():
                   "\n🔰 ᴄᴀʟᴏɴ ᴀʟᴍᴀʀʜᴜᴍ™ Setting\n   Jangan gunakan「 " + key + " 」di depannya\n\n" + \
                   "🔰 " + key + "Sticker「on/off」\n" + \
                   "🔰 " + key + "Respon「on/off」\n" + \
+                  "🔰 " + key + "Respongift「on/off」\n" + \
                   "🔰 " + key + "Contact「on/off」\n" + \
                   "🔰 " + key + "Autojoin「on/off」\n" + \
                   "🔰 " + key + "Autoadd「on/off」\n" + \
@@ -985,7 +989,21 @@ def bot(op):
                    for mention in mentionees:
                         if mention ['M'] in Bots:
                            cl.sendMessage(msg.to, wait["Respontag"])
-                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"7839705","STKPKGID":"1192862","STKVER":"1"}, contentType=7)
+                           cl.sendMessage(msg.to, None, contentMetadata={"STKID":"13769281","STKPKGID":"1344676","STKVER":"1"}, contentType=7)
+                           break
+               if 'MENTION' in msg.contentMetadata.keys() != None:
+                 if wait["Mentiongift"] == True:
+                   name = re.findall(r'@(\w+)', msg.text)
+                   mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                   mentionees = mention['MENTIONEES']
+                   for mention in mentionees:
+                        if mention ['M'] in Bots:
+                           idth = ["a0768339-c2d3-4189-9653-2909e9bb6f58","ec4a14ea-7437-407b-aee7-96b1cbbc1b4b","f35bd31f-5ec7-4b2f-b659-92adf5e3d151","ba1d5150-3b5f-4768-9197-01a3f971aa34","2b4ccc45-7309-47fe-a006-1a1edb846ddb","168d03c3-dbc2-456f-b982-3d6f85f52af2","d4f09a5f-29df-48ac-bca6-a204121ea165","517174f2-1545-43b9-a28f-5777154045a6","762ecc71-7f71-4900-91c9-4b3f213d8b26","2df50b22-112d-4f21-b856-f88df2193f9e"]
+                           plihth = random.choice(idth)
+                           jenis = ["5","6","7","8"]
+                           plihjenis = random.choice(jenis)
+                           cl.sendMessage(msg.to, "Yang suka ngetag minta di gift yaa!?\nCek di chat, udah aku gift tuh tp kalo kita belom berteman gift kadaluarsa...")
+                           cl.sendMessage(msg._from, None, contentMetadata={"PRDID":plihth,"PRDTYPE":"THEME","MSGTPL":plihjenis}, contentType=9)
                            break
                if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["Mentionkick"] == True:
@@ -2270,7 +2288,7 @@ def bot(op):
                                 cl.sendMessage(msg.to, "ID Smule : "+smule+"\nLink : "+links)
                                 cl.sendImageWithURL(msg.to, ss)
                             except Exception as error:
-                                    cl.sendMessage(msg.to, str(e))
+                                pass
                                     
                         elif cmd.startswith("cekdate: "):
                           if msg._from in admin:
@@ -2387,6 +2405,13 @@ def bot(op):
                                   cl.sendMessage(msg.to, "http://line.me/ti/p/~" + msgs)
                                   cl.sendMessage(msg.to, None, contentMetadata={'mid': conn.mid}, contentType=13)
 
+                        elif 'Mytoken' in msg.text:
+                          if wait["selfbot"] == True:
+                           if msg._from in admin:
+                               cl.sendMessage(msg.to,"ᴀʜʟɪ ᴋᴜʙᴜʀ™1\n"+cl.authToken)
+                               cl.sendMessage(msg.to,"ᴀʜʟɪ ᴋᴜʙᴜʀ™2\n"+ki.authToken)
+                               cl.sendMessage(msg.to,"ᴀʜʟɪ ᴋᴜʙᴜʀ™3\n"+kk.authToken)
+                               cl.sendMessage(msg.to,"ᴀʜʟɪ ᴋᴜʙᴜʀ™4\n"+kc.authToken)
 #===========Protection============#
                         elif 'Welcome ' in msg.text:
                            if msg._from in admin:
@@ -2647,7 +2672,7 @@ def bot(op):
                                    if target not in Saints:
                                        try:
                                            staff.remove(target)
-                                           cl.sendMessage(msg.to,"Berhasil menghapus admin")
+                                           cl.sendMessage(msg.to,"Berohasil menghapus admin")
                                        except:
                                            pass
 
@@ -2768,6 +2793,18 @@ def bot(op):
                                 wait["detectMention"] = False
                                 cl.sendText(msg.to,"Auto respon dinonaktifkan")
 
+                        elif cmd == "respongift on" or text.lower() == 'respongift on':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                wait["Mentiongift"] = True
+                                cl.sendMessage(msg.to,"Auto respon gift diaktifkan")
+
+                        elif cmd == "respongift off" or text.lower() == 'respongift off':
+                          if wait["selfbot"] == True:
+                            if msg._from in admin:
+                                wait["Mentiongift"] = False
+                                cl.sendMessage(msg.to,"Auto respon gift dinonaktifkan")   
+                                
                         elif cmd == "autojoin on" or text.lower() == 'autojoin on':
                           if wait["selfbot"] == True:
                             if msg._from in admin:
