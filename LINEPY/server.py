@@ -27,11 +27,11 @@ class LineServer(object):
 
     USER_AGENT  = 'Line/2.1.5'
     APP_TYPE    = ApplicationType.CHROMEOS
-    APP_NAME    = "CHROMEOS\t2.1.5\tCHROME_OS\t1"
+    APP_NAME    = "CHROMEOS\t2.1.5\tPH-13\t1"
     PHONE_TYPE  = ApplicationType.IOS
     PHONE_NAME  = 'CHROMEOS\t2.1.5\t"+nama+"\t1'
     CARRIER     = '51089, 1-0'
-    SYSTEM_NAME = 'CHROME_OS'
+    SYSTEM_NAME = 'PH-13'
     IP_ADDR     = '8.8.8.8'
     EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 
