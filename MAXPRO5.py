@@ -522,14 +522,14 @@ def atend():
 def help():
     key = Setmain["keyCommand"]
     key = key.title()
-    helpMessage = "🌹 COMMAND 🌹" + key + ".1 🔞\n\n" + \
-                  "🍀 " + key + "คท\n" + \
-                  "🍀 " + key + "ID\n" + \
-                  "🍀 " + key + "ID「@」\n" + \
+    helpMessage = "🔰【さัএπัஞ✵ບิथℓℓҨतΩ】🔰" + key + ".1 🔞\n\n" + \
+                  "🍀 " + key + "คท/Me\n" + \
+                  "🍀 " + key + "Mid\n" + \
+                  "🍀 " + key + "Mid「@」\n" + \
                   "🍀 " + key + "Steal「@」\n" + \
                   "🍀 " + key + "Cover「@」\n" + \
+                  "🍀 " + key + "แตก「@」\n" + \
                   "🍀 " + key + "Kill「@」\n" + \
-                  "🍀 " + key + "Kick「@」\n" + \
                   "🍀 " + key + "ลบรัน\n" + \
                   "🍀 " + key + "Setting\n" + \
                   "🍀 " + key + "About\n" + \
@@ -593,7 +593,7 @@ def help():
                   "🍀 " + key + "Get-zodiak「Zodiak」\n" + \
                   "🍀 " + key + "Get-sholat「Nama Kota」\n" + \
                   "🍀 " + key + "Get-cuaca「Nama Kota」\n" + \
-                  "\n🌹  คำสัง ตั้งค่า เปิด/ปิด 🌹" + key + "🔞\n" + \
+                  "\n🔰 คำสัง ตั้งค่า เปิด/ปิด 🔰" + key + "🔞\n" + \
                   "🍄 " + key + "เปิด/ปิด เตะแทค\n" + \
                   "🍄 " + key + "Protectall「on/off」\n" + \
                   "🍄 " + key + "Protecturl「on/off」\n" + \
@@ -614,7 +614,7 @@ def help():
                   "🍄 " + key + "Welcome「on/off」\n" + \
                   "🍄 " + key + "Leave「on/off」\n" + \
                   "🍄 " + key + "Jointicket「on/off」\n" + \
-                  "\n🌹 SETTINGS ADMIN 🌹" + key + "🔞\n" + \
+                  "\n🔰 SETTINGS ADMIN 🔰" + key + "🔞\n" + \
                   "🍃 " + key + "Bot:on\n" + \
                   "🍃 " + key + "Bot:expell\n" + \
                   "🍃 " + key + "Staff:on\n" + \
@@ -837,7 +837,7 @@ def bot(op):
                     if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
                         cl.acceptGroupInvitation(op.param1)
                         ginfo = cl.getGroup(op.param1)
-                        cl.sendMessage(op.param1,"Haii " +str(ginfo.name))
+                        cl.sendMessage(op.param1,"สวัสดี 😎 " +str(ginfo.name))
                     else:
                         cl.acceptGroupInvitation(op.param1)
                         ginfo = cl.getGroup(op.param1)
@@ -925,7 +925,19 @@ def bot(op):
                                     for _mid in gMembMids:
                                         random.choice(ABC).cancelGroupInvitation(op.param1,[_mid])
                                 except:
-                                    pass
+                                    try:
+                                        group = km.getGroup(op.param1)
+                                        gMembMids = [contact.mid for contact in group.invitee]
+                                        for _mid in gMembMids:
+                                            random.choice(ABC).cancelGroupInvitation(op.param1,[_mid])
+                                    except:
+                                        try:
+                                            group = kb.getGroup(op.param1)
+                                            gMembMids = [contact.mid for contact in group.invitee]
+                                            for _mid in gMembMids:
+                                                random.choice(ABC).cancelGroupInvitation(op.param1,[_mid])
+                                        except:
+                                            pass
 
         if op.type == 17:
             if op.param2 in wait["blacklist"]:
@@ -989,7 +1001,15 @@ def bot(op):
                                     if op.param3 not in wait["blacklist"]:
                                         random.choice(ABC).cancelGroupInvitation(op.param1,[op.param2])
                                 except:
-                                    pass
+                                    try:
+                                        if op.param3 not in wait["blacklist"]:
+                                            random.choice(ABC).cancelGroupInvitation(op.param1,[op.param2])
+                                    except:
+                                        try:
+                                            if op.param3 not in wait["blacklist"]:
+                                                random.choice(ABC).cancelGroupInvitation(op.param1,[op.param2])
+                                        except:
+                                            pass
                 return
 
         if op.type == 65:
@@ -1834,6 +1854,7 @@ def bot(op):
                      path3 = kc.downloadObjectMsg(msg_id)
                      path4 = km.downloadObjectMsg(msg_id)
                      path5 = kb.downloadObjectMsg(msg_id)
+                     path6 = sw.downloadObjectMsg(msg_id)
                      settings["changePicture"] = False
                      ki.updateProfilePicture(path1)
                      ki.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
@@ -1845,6 +1866,8 @@ def bot(op):
                      km.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
                      kb.updateProfilePicture(path5)
                      kb.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
+                     sw.updateProfilePicture(path5)
+                     sw.sendMessage(msg.to, "Berhasil mengubah foto profile bot")
                if msg.contentType == 0:
                  if Setmain["autoRead"] == True:
                      cl.sendChatChecked(msg.to, msg_id)
@@ -1880,7 +1903,7 @@ def bot(op):
                                 wait["selfbot"] = False
                                 cl.sendText(msg.to, "Selfbot dinonaktifkan")
                                             
-                        elif cmd == "คำสั่ง":
+                        elif cmd == "/help":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 helpMessage = help()
@@ -1901,7 +1924,7 @@ def bot(op):
                                 text = xpesan + zxc + ret_ + ""
                                 cl.sendMessage(to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
 
-                        elif cmd == "คำสั่ง2":
+                        elif cmd == "/help2":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 helpMessage1 = helpbot()
@@ -1922,7 +1945,7 @@ def bot(op):
                                 text = xpesan + zxc + ret_ + ""
                                 cl.sendMessage(to, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
 
-                        elif cmd == "เชคค่า":
+                        elif cmd == "/status":
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                 tz = pytz.timezone("Asia/Jakarta")
@@ -2054,10 +2077,10 @@ def bot(op):
                                msg.contentMetadata = {'mid': mid}
                                cl.sendMessage1(msg)
 
-                        elif text.lower() == "ไอดี":
+                        elif text.lower() == "mid":
                                cl.sendMessage(msg.to, msg._from)
 
-                        elif cmd.startswith("ไอดี "):
+                        elif cmd.startswith("mid "):
                           if wait["selfbot"] == True:
                             if msg._from in admin:
                                key = eval(msg.contentMetadata["MENTION"])
@@ -2190,7 +2213,7 @@ def bot(op):
                                    kc.removeAllMessages(op.param2)
                                    km.removeAllMessages(op.param2)
                                    kb.removeAllMessages(op.param2)
-                                   cl.sendText(msg.to,"👌ทำการลบ ข้อความแชท เรียบร้อยแล้ว..✔")
+                                   cl.sendText(msg.to,"ทำการลบ ข้อความแชท เรียบร้อยแล้ว..✔")
                                except:
                                    pass
 
