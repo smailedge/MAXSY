@@ -10,44 +10,44 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import youtube_dl
 
-cl = LineClient(authToken='EvsX3LGgkBpWuOoBK2E8.sgl/sXGRl9guOXcolZzI6a.xv8tdvR5YNA9uYieRKCBEXlSZSaMx176pt16Qh0fOEc=')
+cl = LineClient(authToken='EN8M4CX6VxWqvUGswI55.I7AJcrfysUIaxrqdad1azq.sCD6QR7EEHcGYhN4mjyn60eBFe/Md58/0Pk5gSCfG+s=')
 cl.log("Auth Token : " + str(cl.authToken))
 channel = LineChannel(cl)
 cl.log("Channel Access Token : " + str(channel.channelAccessToken))
 
-#ki = LineClient(authToken='EuWTbncyWy4UiwAQjCw4.CkDHRnXWxhVHXXExSKTuba.icGxHjL45Gm7bCbzkkTb5VcQazTWQFyGwzD0rPvSNYI=')
-#ki.log("Auth Token : " + str(ki.authToken))
-#channel1 = LineChannel(ki)
-#ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
+ki = LineClient(authToken='ENAvWngY8z5flW55zBo5.SUkPh0TjwPGD3SwfdjFMbq.im6H1Kl/f7GSZGzn94opGVIcGWPcdbZGoHwZxDRSaT4=')
+ki.log("Auth Token : " + str(ki.authToken))
+channel1 = LineChannel(ki)
+ki.log("Channel Access Token : " + str(channel1.channelAccessToken))
 
-#kk = LineClient(authToken='EuMuGJuCYmx8nKBFdfS6.6TaD/2yVAn8APijktfGZbG.TLu+C/ULt4Iwh8SyUPi9vsZItXMSFNjQ2MtGxNkUivc=')
-#kk.log("Auth Token : " + str(kk.authToken))
-#channel2 = LineChannel(kk)
-#kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
+kk = LineClient(authToken='ENLk2iO2hOezQCTT5lsd.Wo5AorAbkVgaweyzMEiZtq.X4T6M9XebHS39A5veRHlo0lZXe36kOezTcp93mk/+b4=')
+kk.log("Auth Token : " + str(kk.authToken))
+channel2 = LineChannel(kk)
+kk.log("Channel Access Token : " + str(channel2.channelAccessToken))
 
-#kc = LineClient(authToken='Eu4IZQfW6RB7gxnPVii5.3PW3p/c0HGW3xAfdHFtWHq.T3Y0y6g01WyRTvq5KOmhoOA8tqD7UT6gby+DqjJq70k=')
-#kc.log("Auth Token : " + str(kc.authToken))
-#channel3 = LineChannel(kc)
-#kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
+kc = LineClient(authToken='ENzRZ2p0c9TjdDdoGTE9.kKQa4lOKUB85GqmO1mixIq.dlpenjksUVB55Aq1j8AXe96MMmaZZRIf2OCU9plBSOQ=')
+kc.log("Auth Token : " + str(kc.authToken))
+channel3 = LineChannel(kc)
+kc.log("Channel Access Token : " + str(channel3.channelAccessToken))
 
-#sw = LineClient(authToken='Eum45zC2jYTFgRSJRLK7.H2k42h1SRAKCqLkG3ObSDW.uhiLccY0ojuZPkPa3pQ68RaU4bu1q+LK23tTyVCnOzk=')
-#sw.log("Auth Token : " + str(sw.authToken))
-#channel11 = LineChannel(sw)
-#sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
+sw = LineClient(authToken='EN2H3QkUsShdDYCz5mOb.prRZLwJqPCmMfE5IXSxJAW.8MD1eUxBFdPTQF6IlMYOdOxQYBfz7e51y4Z5byxRRR0=')
+sw.log("Auth Token : " + str(sw.authToken))
+channel11 = LineChannel(sw)
+sw.log("Channel Access Token : " + str(channel11.channelAccessToken))
 
 poll = LinePoll(cl)
 call = LineCall(cl)
-creator = ["u4862fe4b182b2fd194a3108e2f3662e8","ue1d6a794435130d139f9c5dde19aa9e5"]
-owner = ["u4862fe4b182b2fd194a3108e2f3662e8","ue1d6a794435130d139f9c5dde19aa9e5"]
-admin = ["u4862fe4b182b2fd194a3108e2f3662e8","ue1d6a794435130d139f9c5dde19aa9e5"]
-staff = ["u4862fe4b182b2fd194a3108e2f3662e8","ue1d6a794435130d139f9c5dde19aa9e5"]
+creator = ["ub6f9d53713c5869f0d78e71febe13837"]
+owner = ["ub6f9d53713c5869f0d78e71febe13837"]
+admin = ["ub6f9d53713c5869f0d78e71febe13837"]
+staff = ["ub6f9d53713c5869f0d78e71febe13837"]
 mid = cl.getProfile().mid
-#Amid = ki.getProfile().mid
-#Bmid = kk.getProfile().mid
-#Cmid = kc.getProfile().mid
-#Zmid = sw.getProfile().mid
+Amid = ki.getProfile().mid
+Bmid = kk.getProfile().mid
+Cmid = kc.getProfile().mid
+Zmid = sw.getProfile().mid
 KAC = [cl]
-#ABC = [ki,kk,kc]
+ABC = [ki,kk,kc]
 Bots = [mid]
 Saints = admin + staff
 
@@ -293,7 +293,7 @@ def command(text):
 def help():
     key = Setmain["keyCommand"]
     key = key.title()
-    helpMessage = "🔰 【さัএπัஞ✵ບิथℓℓҨतΩ】 Menu\n   Gunakan「 " + key + " 」di depannya\n\n" + \
+    helpMessage = "🔰 【幻想工作室】 Menu\n   Gunakan「 " + key + " 」di depannya\n\n" + \
                   "🔰 " + key + "Me\n" + \
                   "🔰 " + key + "Mid「@」\n" + \
                   "🔰 " + key + "Info「@」\n" + \
